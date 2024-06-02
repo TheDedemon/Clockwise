@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvcde1rc3apbr"]
+[gd_scene load_steps=4 format=3 uid="uid://cvcde1rc3apbr"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_il132"]
 [ext_resource type="AudioStream" uid="uid://blmalh6tuxsw8" path="res://audio/lose_c_01.wav" id="2_bcpwb"]
+[ext_resource type="FontFile" uid="uid://dljllnnb46grv" path="res://arts/fonts/DMSans-Bold.ttf" id="2_xv5j5"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_il132")
@@ -17,6 +18,7 @@ offset_right = 1307.5
 offset_bottom = 587.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_xv5j5")
 theme_override_font_sizes/font_size = 128
 text = "Game Over"
 
@@ -31,6 +33,7 @@ offset_right = 1337.5
 offset_bottom = 749.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_xv5j5")
 theme_override_font_sizes/font_size = 48
 text = "Press Space to restart"
 horizontal_alignment = 1

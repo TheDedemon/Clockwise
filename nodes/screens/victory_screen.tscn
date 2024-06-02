@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://8vlhtqu1yvd5"]
+[gd_scene load_steps=4 format=3 uid="uid://8vlhtqu1yvd5"]
 
 [ext_resource type="Script" path="res://scripts/victory.gd" id="1_b1kue"]
 [ext_resource type="AudioStream" uid="uid://b13ls8u7oxyog" path="res://audio/jingle_achievement_00.wav" id="2_6gi5c"]
+[ext_resource type="FontFile" uid="uid://dljllnnb46grv" path="res://arts/fonts/DMSans-Bold.ttf" id="2_u5ftt"]
 
 [node name="Victory" type="Node2D" node_paths=PackedStringArray("timer_label")]
 script = ExtResource("1_b1kue")
@@ -17,6 +18,7 @@ offset_right = 1920.0
 offset_bottom = 478.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_u5ftt")
 theme_override_font_sizes/font_size = 128
 text = "Well Done !!!"
 horizontal_alignment = 1
@@ -27,6 +29,7 @@ modulate = Color(0.968627, 0.54902, 0.419608, 1)
 offset_top = 464.0
 offset_right = 1920.0
 offset_bottom = 639.0
+theme_override_fonts/font = ExtResource("2_u5ftt")
 theme_override_font_sizes/font_size = 72
 text = "3 Minutes 20 Seconds"
 horizontal_alignment = 1
@@ -42,6 +45,7 @@ offset_right = 1920.0
 offset_bottom = 778.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_u5ftt")
 theme_override_font_sizes/font_size = 48
 text = "Press Space to restart"
 horizontal_alignment = 1
