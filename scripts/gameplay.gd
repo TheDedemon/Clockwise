@@ -6,6 +6,9 @@ extends Node
 @export var goals : Array[Goal]
 @export var errors : Array[Failure]
 
+@export var error_sound : AudioStreamPlayer2D = null
+@export var success_sound : AudioStreamPlayer2D = null
+
 var number_of_error : int = 0
 
 func _ready() -> void:
@@ -23,16 +26,19 @@ func _input(event: InputEvent) -> void:
 				if is_clock_correct(goal):
 					goal.set_completed()
 					player_is_correct = true
+					success_sound.play()
 				else:
 					any_goals_left = true
 		
 		if !player_is_correct:
 			errors[number_of_error].change_color()
+			error_sound.play()
 			number_of_error += 1
 			if number_of_error == 3:
 				await get_tree().create_timer(0.25).timeout
 				get_tree().change_scene_to_file("res://nodes/screens/game_over_screen.tscn")
 		if !any_goals_left:
+			await get_tree().create_timer(0.25).timeout
 			get_tree().change_scene_to_file("res://nodes/screens/victory_screen.tscn")
 			
 func is_clock_correct(goal: Goal) -> bool:

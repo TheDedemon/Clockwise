@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvcde1rc3apbr"]
+[gd_scene load_steps=3 format=3 uid="uid://cvcde1rc3apbr"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_il132"]
+[ext_resource type="AudioStream" uid="uid://blmalh6tuxsw8" path="res://audio/lose_c_01.wav" id="2_bcpwb"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_il132")
@@ -34,3 +35,10 @@ theme_override_font_sizes/font_size = 48
 text = "Press Space to restart"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_bcpwb")
+volume_db = -10.0
+autoplay = true

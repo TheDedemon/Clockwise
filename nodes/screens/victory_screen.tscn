@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://8vlhtqu1yvd5"]
+[gd_scene load_steps=3 format=3 uid="uid://8vlhtqu1yvd5"]
 
 [ext_resource type="Script" path="res://scripts/victory.gd" id="1_b1kue"]
+[ext_resource type="AudioStream" uid="uid://b13ls8u7oxyog" path="res://audio/jingle_achievement_00.wav" id="2_6gi5c"]
 
 [node name="Victory" type="Node2D" node_paths=PackedStringArray("timer_label")]
 script = ExtResource("1_b1kue")
@@ -45,3 +46,10 @@ theme_override_font_sizes/font_size = 48
 text = "Press Space to restart"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6gi5c")
+volume_db = -10.0
+autoplay = true
