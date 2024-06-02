@@ -14,6 +14,7 @@ script = ExtResource("2_a7l7n")
 label = NodePath("Label")
 normal_alarm_sprite = NodePath("Alarm-clock-plus-white")
 completed_alarm_sprite = NodePath("Alarm-clock-check-white")
+completed_color = Color(0.0235294, 0.839216, 0.627451, 1)
 
 [node name="Alarm-clock-plus-white" type="Sprite2D" parent="."]
 position = Vector2(-300, 0)
