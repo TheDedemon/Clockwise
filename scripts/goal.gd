@@ -23,9 +23,10 @@ func generate() -> void:
 	minutes = randi_range(0, 59)
 	hours_angle = (fmod(hours, 12) / 12) * 360
 	minutes_angle = (minutes / 60) * 360
-	label.text = "%d:%d" % [hours, minutes]
+	label.text = "%02d:%02d" % [hours, minutes]
 
 func set_completed() -> void:
+	is_completed = true
 	modulate = completed_color
 	normal_alarm_sprite.visible = false
 	completed_alarm_sprite.visible = true

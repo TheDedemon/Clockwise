@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/victory.gd" id="1_b1kue"]
 
-[node name="Victory" type="Node2D"]
+[node name="Victory" type="Node2D" node_paths=PackedStringArray("timer_label")]
 script = ExtResource("1_b1kue")
+timer_label = NodePath("Timer")
 
 [node name="WellDone" type="Label" parent="."]
 modulate = Color(0.0235294, 0.839216, 0.627451, 1)
@@ -20,7 +21,7 @@ text = "Well Done !!!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Time" type="Label" parent="."]
+[node name="Timer" type="Label" parent="."]
 modulate = Color(0.968627, 0.54902, 0.419608, 1)
 offset_top = 464.0
 offset_right = 1920.0

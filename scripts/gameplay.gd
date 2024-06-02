@@ -5,8 +5,16 @@ extends Node
 @export var minutes_hand : ClockHand = null
 @export var goals : Array[Goal]
 
+var number_of_error : int = 0
+
+func _ready() -> void:
+	Globals.timer = 0
+
+func _process(delta: float) -> void:
+	Globals.timer += delta
+
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Confirm"):
+	if event.is_action_released("Confirm"):
 		var player_is_correct : bool = false
 		var any_goals_left : bool = false
 		for goal in goals:
@@ -16,9 +24,14 @@ func _input(event: InputEvent) -> void:
 					player_is_correct = true
 				else:
 					any_goals_left = true
+		print(any_goals_left)
 		
 		if !player_is_correct:
-			pass # ToDo make error
+			number_of_error += 1
+			if number_of_error == 3:
+				get_tree().change_scene_to_file("res://nodes/screens/game_over_screen.tscn")
+		if !any_goals_left:
+			get_tree().change_scene_to_file("res://nodes/screens/victory_screen.tscn")
 			
 func is_clock_correct(goal: Goal) -> bool:
 	#print("hours: clock %d = alarm %d" % [hours_hand.rotation_degrees, goal.hours_angle])
