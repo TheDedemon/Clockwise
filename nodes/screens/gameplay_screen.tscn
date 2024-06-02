@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://buh7e17tb8rir"]
+[gd_scene load_steps=8 format=3 uid="uid://buh7e17tb8rir"]
 
 [ext_resource type="Script" path="res://scripts/gameplay.gd" id="1_7atd7"]
 [ext_resource type="PackedScene" uid="uid://cquu2h68vku70" path="res://nodes/clock.tscn" id="1_f5b2k"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d1ifqiu2q7lx0" path="res://nodes/failure.tscn" id="4_oaqda"]
 [ext_resource type="AudioStream" uid="uid://17sh47c4fmho" path="res://audio/8-bit-error.wav" id="5_8dl0s"]
 [ext_resource type="AudioStream" uid="uid://buvh1qbdka8lo" path="res://audio/positive-blip-effect.wav" id="6_vwpt5"]
+[ext_resource type="AudioStream" uid="uid://c2l8r7470ctt0" path="res://audio/Chill.mp3" id="7_hcn7w"]
 
 [node name="GameplayScreen" type="Node2D" node_paths=PackedStringArray("hours_hand", "minutes_hand", "goals", "errors", "error_sound", "success_sound")]
 script = ExtResource("1_7atd7")
@@ -44,5 +45,10 @@ stream = ExtResource("5_8dl0s")
 
 [node name="SuccessAudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_vwpt5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_hcn7w")
+volume_db = -10.0
+autoplay = true
 
 [editable path="Clock"]
