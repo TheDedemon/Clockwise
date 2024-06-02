@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgc34tnayo5rb"]
+
+[ext_resource type="PackedScene" uid="uid://duumcgunalv71" path="res://nodes/clock_hand.tscn" id="1_xh20q"]
+
+[node name="MinutesHand" instance=ExtResource("1_xh20q")]
+speed = -120.0
+
+[node name="Visual" parent="." index="0"]
+modulate = Color(1, 0.819608, 0.4, 1)
+position = Vector2(0, -90)
+scale = Vector2(0.04, 0.39)

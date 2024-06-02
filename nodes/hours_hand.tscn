@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://47jlgb3srgej"]
+
+[ext_resource type="PackedScene" uid="uid://duumcgunalv71" path="res://nodes/clock_hand.tscn" id="1_h5yi5"]
+
+[node name="HoursHand" instance=ExtResource("1_h5yi5")]
+
+[node name="Visual" parent="." index="0"]
+modulate = Color(0.14902, 0.329412, 0.486275, 1)
+position = Vector2(0, -65)
+scale = Vector2(0.06, 0.3)
