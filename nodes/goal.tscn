@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cavro8vkhq0lt"]
+
+[ext_resource type="Texture2D" uid="uid://x130xrr1jjk1" path="res://arts/border.png" id="1_8qh2u"]
+[ext_resource type="Texture2D" uid="uid://dwkhd6vcgbp4l" path="res://arts/alarm-clock-check-white.png" id="2_81rjf"]
+[ext_resource type="Script" path="res://scripts/goal.gd" id="2_a7l7n"]
+[ext_resource type="Texture2D" uid="uid://de2g72hnbxsot" path="res://arts/alarm-clock-plus-white.png" id="3_3ibm7"]
+
+[node name="Goal" type="Sprite2D" node_paths=PackedStringArray("label", "normal_alarm_sprite", "completed_alarm_sprite")]
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_8qh2u")
+script = ExtResource("2_a7l7n")
+label = NodePath("Label")
+normal_alarm_sprite = NodePath("Alarm-clock-plus-white")
+completed_alarm_sprite = NodePath("Alarm-clock-check-white")
+
+[node name="Alarm-clock-plus-white" type="Sprite2D" parent="."]
+position = Vector2(-300, 0)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("3_3ibm7")
+
+[node name="Alarm-clock-check-white" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-300, 0)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_81rjf")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -206.0
+offset_top = -148.0
+offset_right = 385.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 216
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
