@@ -4,6 +4,7 @@ extends Node
 @export var hours_hand : ClockHand = null
 @export var minutes_hand : ClockHand = null
 @export var goals : Array[Goal]
+@export var errors : Array[Failure]
 
 var number_of_error : int = 0
 
@@ -24,11 +25,12 @@ func _input(event: InputEvent) -> void:
 					player_is_correct = true
 				else:
 					any_goals_left = true
-		print(any_goals_left)
 		
 		if !player_is_correct:
+			errors[number_of_error].change_color()
 			number_of_error += 1
 			if number_of_error == 3:
+				await get_tree().create_timer(0.25).timeout
 				get_tree().change_scene_to_file("res://nodes/screens/game_over_screen.tscn")
 		if !any_goals_left:
 			get_tree().change_scene_to_file("res://nodes/screens/victory_screen.tscn")

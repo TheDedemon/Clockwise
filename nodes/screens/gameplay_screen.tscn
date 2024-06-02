@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://buh7e17tb8rir"]
+[gd_scene load_steps=5 format=3 uid="uid://buh7e17tb8rir"]
 
 [ext_resource type="Script" path="res://scripts/gameplay.gd" id="1_7atd7"]
 [ext_resource type="PackedScene" uid="uid://cquu2h68vku70" path="res://nodes/clock.tscn" id="1_f5b2k"]
 [ext_resource type="PackedScene" uid="uid://cavro8vkhq0lt" path="res://nodes/goal.tscn" id="3_fgw23"]
+[ext_resource type="PackedScene" uid="uid://d1ifqiu2q7lx0" path="res://nodes/failure.tscn" id="4_oaqda"]
 
-[node name="GameplayScreen" type="Node2D" node_paths=PackedStringArray("hours_hand", "minutes_hand", "goals")]
+[node name="GameplayScreen" type="Node2D" node_paths=PackedStringArray("hours_hand", "minutes_hand", "goals", "errors")]
 script = ExtResource("1_7atd7")
 hours_hand = NodePath("Clock/HoursHand")
 minutes_hand = NodePath("Clock/MinutesHand")
 goals = [NodePath("LeftGoal"), NodePath("MiddleGoal"), NodePath("RightGoal")]
+errors = [NodePath("Left Failure"), NodePath("Center Failure"), NodePath("Right Failure")]
 
 [node name="Clock" parent="." instance=ExtResource("1_f5b2k")]
 position = Vector2(960, 540)
@@ -21,5 +23,14 @@ position = Vector2(960, 960)
 
 [node name="RightGoal" parent="." instance=ExtResource("3_fgw23")]
 position = Vector2(1310, 960)
+
+[node name="Left Failure" parent="." instance=ExtResource("4_oaqda")]
+position = Vector2(810, 93)
+
+[node name="Center Failure" parent="." instance=ExtResource("4_oaqda")]
+position = Vector2(960, 93)
+
+[node name="Right Failure" parent="." instance=ExtResource("4_oaqda")]
+position = Vector2(1110, 93)
 
 [editable path="Clock"]

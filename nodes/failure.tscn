@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1ifqiu2q7lx0"]
+
+[ext_resource type="Texture2D" uid="uid://bnwa4o62ay6qx" path="res://arts/x-circle-white.png" id="1_am30b"]
+[ext_resource type="Script" path="res://scripts/failure.gd" id="2_p15mm"]
+
+[node name="Failure" type="Sprite2D"]
+modulate = Color(0, 0, 0, 0.101961)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_am30b")
+script = ExtResource("2_p15mm")
+normal_color = Color(0, 0, 0, 0.101961)
+error_color = Color(0.937255, 0.278431, 0.435294, 1)
