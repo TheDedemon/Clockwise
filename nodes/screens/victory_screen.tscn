@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://8vlhtqu1yvd5"]
+
+[ext_resource type="Script" path="res://scripts/victory.gd" id="1_b1kue"]
+
+[node name="Victory" type="Node2D"]
+script = ExtResource("1_b1kue")
+
+[node name="WellDone" type="Label" parent="."]
+modulate = Color(0.0235294, 0.839216, 0.627451, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 303.0
+offset_right = 1920.0
+offset_bottom = 478.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 128
+text = "Well Done !!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="."]
+modulate = Color(0.968627, 0.54902, 0.419608, 1)
+offset_top = 464.0
+offset_right = 1920.0
+offset_bottom = 639.0
+theme_override_font_sizes/font_size = 72
+text = "3 Minutes 20 Seconds"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartLabel2" type="Label" parent="."]
+modulate = Color(0.14902, 0.329412, 0.486275, 0.74902)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 603.0
+offset_right = 1920.0
+offset_bottom = 778.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Press Space to restart"
+horizontal_alignment = 1
+vertical_alignment = 1
